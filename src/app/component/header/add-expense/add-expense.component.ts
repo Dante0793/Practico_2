@@ -18,21 +18,21 @@ export class AddExpenseComponent implements OnInit {
   maxDate :any=new Date();
   keywords: any = [];
   isSaving:boolean=false;
-  payments: any = ['Card', 'Cash', 'UPI', 'Net Banking', 'Paypal'];
+  payments: any = ['Tarjeta de debito', 'Tarjeta de credito', 'Transferencia', 'Efectivo', 'QR', 'Paypal'];
   @Input() tags:any=[];
   months: any = [
-    'Jan',
+    'Ene',
     'Feb',
     'Mar',
-    'Apr',
+    'Abr',
     'May',
     'Jun',
     'Jul',
-    'Aug',
+    'Ago',
     'Sep',
     'Oct',
     'Nov',
-    'Dec',
+    'Dic',
   ];
   constructor(
     public businessData: BusinessDataService,
@@ -100,10 +100,10 @@ export class AddExpenseComponent implements OnInit {
       .subscribe((res: any) => {
         this.isSaving=false;
         if (res.status === true) {
-          this._snackBar.open('Expense Added', '', { duration: 2000 });
+          this._snackBar.open('Gasto añadido', '', { duration: 2000 });
           this.onReset();
         } else {
-          this._snackBar.open('Error occured!! Please try again', '', {
+          this._snackBar.open('Ocurrio un error!! intenta de nuevo', '', {
             duration: 2000,
           });
         }
@@ -116,9 +116,9 @@ export class AddExpenseComponent implements OnInit {
       .onUpdateExpense(this.id, this.expenseForm.value)
       .subscribe((res) => {
         if (res) {
-          this._snackBar.open('Expense Updated', '', { duration: 2000 });
+          this._snackBar.open('Gasto actualizado', '', { duration: 2000 });
         } else {
-          this._snackBar.open('Error! Please try Again', '', {
+          this._snackBar.open('Error! Por favor intenta otra vez', '', {
             duration: 2000,
           });
         }

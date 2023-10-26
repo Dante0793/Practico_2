@@ -1,33 +1,33 @@
 <mat-stepper linear="true" #stepper>
   <mat-step editable="true">
-    <ng-template matStepLabel>Import</ng-template>
+    <ng-template matStepLabel>Importar</ng-template>
     <div class="tables">
       <!-- Here functionality start -->
       <div class="table-container">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let element">Required</td>
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">Requerido</td>
         </ng-container>
         <ng-container matColumnDef="amount">
-          <th mat-header-cell *matHeaderCellDef>Amount</th>
-          <td mat-cell *matCellDef="let element">Required</td>
+          <th mat-header-cell *matHeaderCellDef>Monto</th>
+          <td mat-cell *matCellDef="let element">Requerido</td>
         </ng-container>
         <ng-container matColumnDef="date">
-          <th mat-header-cell *matHeaderCellDef>Expense Date</th>
-          <td mat-cell *matCellDef="let element">Required Format (DD/MM/YYYY)</td>
+          <th mat-header-cell *matHeaderCellDef>Fecha de gasto</th>
+          <td mat-cell *matCellDef="let element">Formato Requerido (DD/MM/AAAA)</td>
         </ng-container>
         <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef>Expense Category</th>
-          <td mat-cell *matCellDef="let element">Optional(default - Unassigned)</td>
+          <th mat-header-cell *matHeaderCellDef>Categoria de gasto</th>
+          <td mat-cell *matCellDef="let element">Opcional</td>
         </ng-container>
         <ng-container matColumnDef="payment">
-          <th mat-header-cell *matHeaderCellDef>Payment Type</th>
-          <td mat-cell *matCellDef="let element">Optional(default - Card)</td>
+          <th mat-header-cell *matHeaderCellDef>Tipo de pago</th>
+          <td mat-cell *matCellDef="let element">Opcional</td>
         </ng-container>
         <ng-container matColumnDef="comment">
-          <th mat-header-cell *matHeaderCellDef>Comment</th>
-          <td mat-cell *matCellDef="let element" >Optional(default - Unassigned)</td>
+          <th mat-header-cell *matHeaderCellDef>Commentarios</th>
+          <td mat-cell *matCellDef="let element" >Opcional</td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
@@ -36,34 +36,34 @@
     </div>
     <div style="padding-top: 10px;">
       <button mat-raised-button color="accent"  matStepperNext (click)="filePicker.click()" type="button">
-        Import File
+        Importar archivo
       </button>
       <input type="file" hidden #filePicker (change)="importDataFromCSV($event)">
     </div>
   </mat-step>
   <mat-step editable="true">
-    <ng-template matStepLabel>Review</ng-template>
+    <ng-template matStepLabel>Revisar</ng-template>
     <div style="padding-top: 10px;">
-      <p *ngIf="isCorrect">Please Procced with Save Button..</p>
-      <p *ngIf="!isCorrect">Please Reupload File in CSV format with Back Button</p>
+      <p *ngIf="isCorrect">Continúe con el botón Guardar..</p>
+      <p *ngIf="!isCorrect">Vuelva a cargar el archivo en formato CSV con el botón Atrás</p>
     </div>
     <div>
-      <button mat-raised-button matStepperPrevious>Back</button>
+      <button mat-raised-button matStepperPrevious>Atrás</button>
       <button
         mat-raised-button
         matStepperNext
         (click)="onSaveImport()"
         color="primary"
       >
-        Save
+        Guardar
       </button>
     </div>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
+    <ng-template matStepLabel>Hecho</ng-template>
     <div class="view">
       <button mat-raised-button color="primary" (click)="onView()">
-        View Expenses
+        Ver gastos
       </button>
     </div>
   </mat-step>

@@ -1,28 +1,28 @@
 <div style="margin-top: 30px;">
-    <div class="viewExpense"><p>Expense Details</p></div>
+    <div class="viewExpense"><p>Detalles de gastos</p></div>
     <table align="center">
         <tr>
-            <td><b>Name : </b></td>
+            <td><b>Nombre : </b></td>
             <td>{{tableData.name}}</td>
         </tr>
         <tr>
-            <td><b>Amount : </b></td>
+            <td><b>Monto : </b></td>
             <td>{{tableData.amount}}</td>
         </tr>
         <tr>
-            <td><b>Expense Date :</b> </td>
+            <td><b>Fecha de gasto:</b> </td>
             <td>{{tableData.expense_date}}</td>
         </tr>
         <tr>
-            <td><b>Expense Category : </b></td>
+            <td><b>Categoria de gasto : </b></td>
             <td>{{tableData.expense_category}}</td>
         </tr>
         <tr>
-            <td><b>Payment Type : </b></td>
+            <td><b>Tipo de gasto : </b></td>
             <td>{{tableData.payment}}</td>
         </tr>
         <tr *ngIf="tableData.comment!=null">
-            <td><b>Comment :</b> </td>
+            <td><b>Comentarios :</b> </td>
             <td>{{tableData.comment}}</td>
         </tr>
     </table>

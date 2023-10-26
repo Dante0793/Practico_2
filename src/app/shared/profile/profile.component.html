@@ -2,9 +2,9 @@
   <mat-card class="example-card">
     <mat-card-header class="example-header">
       <mat-card-title
-        >User Information <mat-icon>verified_user</mat-icon></mat-card-title
+        >informacion del usuario <mat-icon>verified_user</mat-icon></mat-card-title
       >
-      <button mat-raised-button color="primary" (click)="editField()" [disabled]="!editable"><mat-icon>edit</mat-icon>Edit</button>
+      <button mat-raised-button color="primary" (click)="editField()" [disabled]="!editable"><mat-icon>edit</mat-icon>Editar</button>
     </mat-card-header>
     <mat-progress-bar *ngIf="isProcess" mode="indeterminate"></mat-progress-bar>
     <mat-card-content *ngIf="!isProcess">
@@ -19,17 +19,17 @@
         </div>
         <div class="row">
           <div class="col-sm-6 col-xs-6 names" *ngIf="!isEdit">
-            <p>Name: {{name}}</p>
+            <p>Nombre: {{name}}</p>
           </div>
           <div class="col-sm-6 col-xs-6 names" *ngIf="isEdit">
-            <p>Name:</p>
+            <p>Nombre:</p>
             <input type="text" [value]="name" [(ngModel)]="newName">
           </div>
           <div class="col-sm-6 col-xs-6 names" *ngIf="!isEdit">
-            <p>UserName: {{user_name}}</p>
+            <p>Nombre de usuario: {{user_name}}</p>
           </div>
           <div class="col-sm-6 col-xs-6 names" *ngIf="isEdit">
-            <p>UserName:</p>
+            <p>Nombre de usuario:</p>
             <input type="text" [value]="name" [(ngModel)]="newUsername" width="50%">
           </div>
         </div>
@@ -45,7 +45,7 @@
       <button mat-raised-button mat-dialog-close cdkFocusInitial color="primary">Ok</button>
     </mat-card-actions>
     <mat-card-actions align="end" *ngIf="isEdit">
-      <button mat-raised-button mat-dialog-close cdkFocusInitial color="primary" (click)="saveData()" >Save</button>
+      <button mat-raised-button mat-dialog-close cdkFocusInitial color="primary" (click)="saveData()" >Guardar</button>
     </mat-card-actions>
   </mat-card>
 </div>

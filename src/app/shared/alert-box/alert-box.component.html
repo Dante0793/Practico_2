@@ -1,22 +1,22 @@
 <div *ngIf="type==='alert'">
-  <h1 mat-dialog-title>Leaving So Soon???</h1>
-  <div mat-dialog-content>Logged out for now, but the journey continues. See you soon! 👋😄</div>
+  <h1 mat-dialog-title>Cerrar sesión</h1>
+  <div mat-dialog-content>Esta seguro que quiere cerrar sesión?</div>
   <div mat-dialog-actions align="end">
-    <button mat-raised-button mat-dialog-close cdkFocusInitial>Stay</button>
+    <button mat-raised-button mat-dialog-close cdkFocusInitial>No</button>
     <button
       mat-raised-button
       color="primary"
       mat-dialog-close
       (click)="onLogout()"
     >
-      Leave
+      Salir
     </button>
   </div>
 </div>
 
 <div *ngIf="type==='error'">
-  <h1 mat-dialog-title>Wrong File Choosen</h1>
-  <div mat-dialog-content>Use Chrome Browser Or Please Choose only CSV (.csv) Files !!</div>
+  <h1 mat-dialog-title>Archivo incorrecto elegido</h1>
+  <div mat-dialog-content>Utilice el navegador Chrome o elija solo archivos CSV (.csv).</div>
   <div mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close>OK</button>
   </div>

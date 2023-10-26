@@ -2,25 +2,25 @@
     <mat-card-header>
       <mat-card-title>
         <div>
-          <p>Add Expense Category <mat-icon>note_add</mat-icon></p>
+          <p>Agregar categoría de gastos <mat-icon>note_add</mat-icon></p>
         </div>
       </mat-card-title>
-      <mat-card-subtitle>Add/Remove Expense Categories</mat-card-subtitle>
+      <mat-card-subtitle>Agregar o quitar categorías de gastos</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content *ngIf="CategoryLoad" style="padding-top: 15px;display: flex; justify-content: center;align-items: center;">
       <div class="spinner-grow text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
+        <span class="visually-hidden">Cargando...</span>
       </div>
       <div class="spinner-grow text-danger" role="status" style="margin: 0px 5px;">
-        <span class="visually-hidden">Loading...</span>
+        <span class="visually-hidden">Cargando...</span>
       </div>
       <div class="spinner-grow text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
+        <span class="visually-hidden">Cargando...</span>
       </div>
     </mat-card-content>
     <mat-card-content style="padding-top: 15px" *ngIf="!CategoryLoad">
       <mat-form-field appearance="outline" class="example-form-field">
-        <mat-label>Avaiable Expense Categories</mat-label>
+        <mat-label>Categorías de gastos disponibles</mat-label>
         <mat-chip-grid #chipGrid aria-label="Enter New Category">
           <mat-chip-row *ngFor="let keyword of keywords">
             {{ keyword }}
@@ -31,7 +31,7 @@
           >
             {{ keyword }}
             <button matChipRemove aria-label="'remove ' + keyword">
-              <mat-icon>cancel</mat-icon>
+              <mat-icon>cancelar</mat-icon>
             </button>
           </mat-chip-row>
         </mat-chip-grid>
@@ -45,7 +45,7 @@
     </mat-card-content>
     <mat-card-actions align="end">
       <button mat-raised-button (click)="onReset()">
-        <mat-icon>autorenew</mat-icon>Reset
+        <mat-icon>autorenew</mat-icon>Reiniciar
       </button>
       <button
         *ngIf="!isSaving"
@@ -53,11 +53,11 @@
         (click)="onSave()"
         [disabled]="newKeywords.length === 0"
       >
-        <mat-icon>save</mat-icon> Save
+        <mat-icon>save</mat-icon> Guardar
       </button>
       <button *ngIf="isSaving" class="btn btn-success" type="button" disabled>
         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-        Saving...
+        Guardando...
       </button>
     </mat-card-actions>
   </mat-card>

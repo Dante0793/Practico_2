@@ -19,7 +19,7 @@ export class LoaderComponent implements OnInit{
       if(this.progressVal==this.progressEndVal){
         clearInterval(process);
       }      
-    }, 70);
+    }, 35);
   }
 
 }

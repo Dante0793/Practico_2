@@ -50,18 +50,18 @@ export class ShowChartComponent implements OnInit {
 
   onSelectionChange(event:any){
     this.allMonths={
-      'Jan':0,
+      'Ene':0,
       'Feb':0,
       'Mar':0,
-      'Apr':0,
+      'Abr':0,
       'May':0,
       'Jun':0,
       'Jul':0,
-      'Aug':0,
+      'Ago':0,
       'Sep':0,
       'Oct':0,
       'Nov':0,
-      'Dec':0,
+      'Dic':0,
     };
     const data=this.businessData.hashmap[event.value];
     for(let entry of data){
@@ -73,18 +73,18 @@ export class ShowChartComponent implements OnInit {
     }
     this.barChartData= {
       labels: [
-        'Jan',
+        'Ene',
         'Feb',
         'Mar',
-        'Apr',
+        'Abr',
         'May',
         'Jun',
         'Jul',
-        'Aug',
+        'Ago',
         'Sep',
         'Oct',
         'Nov',
-        'Dec',
+        'Dic',
       ],
       datasets: [
         {

@@ -17,12 +17,12 @@
       <div>
         <div style="margin-top: 20px" *ngIf="isLogging">
           <button mat-raised-button color="primary" (click)="onSignUp()">
-            <mat-icon>perm_identity</mat-icon>Sign Up
+            <mat-icon>perm_identity</mat-icon>Crear cuenta
           </button>
         </div>
         <div style="margin-top: 20px" *ngIf="!isLogging">
           <button mat-raised-button color="primary" (click)="onLogin()">
-            <mat-icon>login</mat-icon>Login
+            <mat-icon>login</mat-icon>Iniciar sesión
           </button>
         </div>
       </div>
@@ -44,7 +44,7 @@
         mat-mini-fab
         class="example-icon favorite-icon"
         aria-label="Example icon-button with heart icon"
-        matTooltip="Sign Up"
+        matTooltip="Crear cuenta"
         (click)="onSignUp()"
         *ngIf="isLogging"
       >
@@ -54,13 +54,13 @@
         mat-raised-button
         class="example-icon favorite-icon"
         aria-label="Example icon-button with heart icon"
-        matTooltip="Login"
+        matTooltip="Iniciar sesión"
         (click)="onLogin()"
         *ngIf="!isLogging"
         color="accent"
       >
         <mat-icon>login</mat-icon>
-        Login
+        Iniciar sesión
       </button>
     </mat-toolbar>
   </div>

@@ -1,10 +1,10 @@
 <div [ngClass]="{'main-class' : isEdit}">
   <mat-card class="example-card">
     <mat-card-header>
-      <mat-card-title *ngIf="!isEdit">Add New Expense</mat-card-title>
-      <mat-card-title *ngIf="isEdit">Edit Expense</mat-card-title>
+      <mat-card-title *ngIf="!isEdit">Agregar nuevo gasto</mat-card-title>
+      <mat-card-title *ngIf="isEdit">Editar gastos</mat-card-title>
       <mat-card-subtitle
-        >Enter all the required fields to save expense</mat-card-subtitle
+        >Ingrese todos los campos requeridos para ahorrar gastos</mat-card-subtitle
       >
     </mat-card-header>
     <mat-card-content style="margin-top: 10px">
@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-sm-6">
             <mat-form-field appearance="outline" style="width: 100%">
-              <mat-label>Expense Name</mat-label>
+              <mat-label>Nombre del gasto</mat-label>
               <input matInput placeholder="" formControlName="name" />
               <mat-hint
                 *ngIf="
@@ -22,7 +22,7 @@
                 "
                 style="color: red"
               >
-                Expense Name is required
+              El nombre del gasto es obligatorio
               </mat-hint>
               <mat-hint
                 *ngIf="
@@ -32,7 +32,7 @@
                 "
                 style="color: red"
               >
-                Expense Name is invalid
+              El nombre del gasto no es válido
               </mat-hint>
               <mat-hint
                 *ngIf="
@@ -42,13 +42,13 @@
                 "
                 style="color: red"
               >
-                Expense Name should be max 50 length
+              El nombre del gasto debe tener una longitud máxima de 50 caracteres
               </mat-hint>
             </mat-form-field>
           </div>
           <div class="col-sm-6">
             <mat-form-field appearance="outline" style="width: 100%">
-              <mat-label>Amount(In Rupees)</mat-label>
+              <mat-label>Cantidad (en Bolivianos)</mat-label>
               <input
                 matInput
                 placeholder=""
@@ -63,7 +63,7 @@
                 "
                 style="color: red"
               >
-                Expense Amount is required
+              Se requiere monto de gasto
               </mat-hint>
             </mat-form-field>
           </div>
@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-sm-6">
             <mat-form-field appearance="outline" style="width: 100%">
-              <mat-label>Choose a Expense date</mat-label>
+              <mat-label>Elija una fecha de gasto</mat-label>
               <input matInput [max]="maxDate"  [matDatepicker]="picker" formControlName="expense_date" (dateChange)="addEvent($event)" />
               <mat-hint
                 *ngIf="
@@ -81,7 +81,7 @@
                 "
                 style="color: red"
               >
-                Expense Date is required
+              Se requiere fecha de gasto
               </mat-hint>
               <mat-datepicker-toggle
                 matIconSuffix
@@ -92,7 +92,7 @@
           </div>
           <div class="col-sm-6">
             <mat-form-field appearance="outline" style="width: 100%" *ngIf="!isEdit">
-              <mat-label>Expense Category</mat-label>
+              <mat-label>Categoría de gastos</mat-label>
               <mat-select formControlName="expense_category" *ngIf="tags">
                 <mat-option *ngFor="let item of tags" [value]="item">{{
                   item
@@ -111,11 +111,11 @@
                 "
                 style="color: red"
               >
-                Expense Category is required
+              Se requiere categoría de gastos
               </mat-hint>
             </mat-form-field>
             <mat-form-field appearance="outline" style="width: 100%" *ngIf="isEdit">
-              <mat-label>Expense Category</mat-label>
+              <mat-label>Categoría de gastos</mat-label>
               <mat-select formControlName="expense_category">
                 <mat-option *ngFor="let item of keywords" [value]="item">{{
                   item
@@ -129,7 +129,7 @@
                 "
                 style="color: red"
               >
-                Expense Category is required
+              Se requiere categoría de gastos
               </mat-hint>
             </mat-form-field>
           </div>
@@ -137,7 +137,7 @@
         <div class="row">
           <div class="col-sm-6">
             <mat-form-field appearance="outline" style="width: 100%">
-              <mat-label>Expense Payment Type</mat-label>
+              <mat-label>Tipo de pago de gastos</mat-label>
               <mat-select formControlName="payment">
                 <mat-option *ngFor="let item of payments" [value]="item">{{
                   item
@@ -151,14 +151,14 @@
                 "
                 style="color: red"
               >
-                Expense Payment is required
+              Se requiere pago de gastos
               </mat-hint>
             </mat-form-field>
           </div>
         </div>
         <div class="row">
           <mat-form-field appearance="outline" style="width: 100%">
-            <mat-label>Comment</mat-label>
+            <mat-label>Comentarios</mat-label>
             <textarea matInput formControlName="comment"></textarea>
           </mat-form-field>
         </div>
@@ -166,7 +166,7 @@
     </mat-card-content>
     <mat-card-actions align="end" *ngIf="!isEdit">
       <button mat-raised-button (click)="onReset()">
-        <mat-icon>autorenew</mat-icon>Reset
+        <mat-icon>autorenew</mat-icon>Reiniciar
       </button>
       <button
         type="submit"
@@ -175,23 +175,23 @@
         (click)="onSaveExpense()"
         [disabled]="expenseForm.invalid"
       >
-        <mat-icon>save</mat-icon> Save
+        <mat-icon>save</mat-icon> Guardar
       </button>
       <button *ngIf="isSaving" class="btn btn-success" type="button" disabled>
         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-        Saving...
+        Guardando...
       </button>
     </mat-card-actions>
 
     <mat-card-actions align="end" *ngIf="isEdit">
       <button mat-raised-button (click)="onReset()">
-        <mat-icon>autorenew</mat-icon>Reset
+        <mat-icon>autorenew</mat-icon>Reiniciar
       </button>
       <button mat-raised-button (click)="onCancel()" >
-        <mat-icon>disabled_by_default</mat-icon> Cancel
+        <mat-icon>disabled_by_default</mat-icon> Cancelar
       </button>
       <button type="submit" mat-raised-button (click)="onEdit()" [disabled]="expenseForm.invalid && expenseForm.status==='INVALID'" color="primary">
-        <mat-icon>edit</mat-icon>Update
+        <mat-icon>edit</mat-icon>Actualizar
       </button>
 
     </mat-card-actions>

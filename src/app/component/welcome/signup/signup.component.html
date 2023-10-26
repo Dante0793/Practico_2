@@ -4,30 +4,30 @@
       <img src="../../../assets/image/save.svg" alt="image" />
     </div>
     <div class="col-sm-6 col-xs-12 col-md-6" style="padding: 20px">
-      <p class="paragraph">Create an Expense Tracker Account</p>
+      <p class="paragraph">Crear una cuenta de seguimiento de gastos</p>
       <div class="line"></div>
       <form [formGroup]="signUpForm">
         <div class="inputs">
           <mat-form-field appearance="outline">
-            <mat-label>Enter Full Name</mat-label>
+            <mat-label>Ingrese el nombre completo</mat-label>
             <input matInput placeholder="Full Name" formControlName="name" />
             <mat-error *ngIf="signUpForm.get('name')?.errors &&
-            signUpForm.get('name')?.hasError('required') && signUpForm.get('name')?.touched"  >Name is required</mat-error>
+            signUpForm.get('name')?.hasError('required') && signUpForm.get('name')?.touched"  >Se requiere el nombre</mat-error>
             <mat-error *ngIf="signUpForm.get('name')?.errors &&
-            signUpForm.get('name')?.hasError('pattern') && signUpForm.get('name')?.touched"  >Please Enter a Valid Name</mat-error>
+            signUpForm.get('name')?.hasError('pattern') && signUpForm.get('name')?.touched"  >Por favor ingrese un nombre valido</mat-error>
           </mat-form-field>
         </div>
         <div class="inputs">
           <mat-form-field appearance="outline">
-            <mat-label>Enter Username</mat-label>
+            <mat-label>Introduzca su nombre de usuario</mat-label>
             <input matInput placeholder="Username" formControlName="username" />
             <mat-error *ngIf="signUpForm.get('username')?.errors &&
-            signUpForm.get('username')?.hasError('required') && signUpForm.get('username')?.touched ">Username is required</mat-error>
+            signUpForm.get('username')?.hasError('required') && signUpForm.get('username')?.touched ">Se requiere nombre de usuario</mat-error>
           </mat-form-field>
         </div>
         <div class="inputs">
           <mat-form-field appearance="outline">
-            <mat-label>Enter Your Gmail</mat-label>
+            <mat-label>Ingrese a su Gmail</mat-label>
             <input
               matInput
               type="email"
@@ -36,17 +36,17 @@
             />
             <mat-error *ngIf="signUpForm.get('gmail')?.errors &&
             signUpForm.get('gmail')?.hasError('required') && signUpForm.get('gmail')?.touched">
-              Email Address is required
+            Se requiere Dirección de correo electrónico
             </mat-error>
             <mat-error *ngIf="signUpForm.get('gmail')?.errors &&
             signUpForm.get('gmail')?.hasError('email') && signUpForm.get('gmail')?.touched" >
-              Email Address is invalid
+            Dirección de correo electrónico es inválida
             </mat-error>
           </mat-form-field>
         </div>
         <div class="inputs">
           <mat-form-field appearance="outline">
-            <mat-label>Enter Password</mat-label>
+            <mat-label>Introducir la contraseña</mat-label>
             <input
               matInput
               
@@ -54,9 +54,9 @@
               type="password"
             />
             <mat-error *ngIf="signUpForm.get('password')?.errors &&
-            signUpForm.get('password')?.hasError('required') && signUpForm.get('password')?.touched">Password is required</mat-error>
+            signUpForm.get('password')?.hasError('required') && signUpForm.get('password')?.touched">se requiere contraseña</mat-error>
             <mat-error *ngIf="signUpForm.get('password')?.errors &&
-            signUpForm.get('password')?.hasError('minlength') && signUpForm.get('password')?.touched">Password should be at least 8 characters</mat-error>
+            signUpForm.get('password')?.hasError('minlength') && signUpForm.get('password')?.touched">La contraseña debe tener al menos 8 caracteres.</mat-error>
           </mat-form-field>
         </div>
         <div class="singUpBtn">
@@ -69,16 +69,16 @@
             [disabled]="signUpForm.invalid"
             (click)="onProceed()"
           ><mat-icon>done</mat-icon>
-            Proceed
+            Crear
           </button>
           <button *ngIf="SignUpContinue" class="btn btn-success" type="button" disabled>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Creating...
+            Creando...
           </button>
         </div>
       </form>
       <div *ngIf="SignUpContinue" style="margin-top: 10px; display:flex; justify-content: center;">
-        <p class="wait">Please Wait.....</p>
+        <p class="wait">Espere por favor.....</p>
       </div>
     </div>
   </div>

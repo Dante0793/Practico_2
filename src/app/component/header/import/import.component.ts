@@ -103,15 +103,15 @@ export class ImportComponent implements OnInit {
         }
       }
         if(!name || !amount || !expense_date){
-          this.snackBar.open('Please Mention required Fields Properly','',{duration:2000});
+          this.snackBar.open('Por favor mencione los campos obligatorios correctamente','',{duration:2000});
           return;
         }
         if(hashamp['expense_date'].split('/')[2].length!=4){
-          this.snackBar.open('Date Format DD/MM/YYYY','',{duration:2000});
+          this.snackBar.open('Formato de fecha DD/MM/AAAA','',{duration:2000});
           return;
         }
         if(parseInt(hashamp['expense_date'].split('/')[1])>12){
-          this.snackBar.open('Date Format DD/MM/YYYY','',{duration:2000});
+          this.snackBar.open('Formato de fecha DD/MM/AAAA','',{duration:2000});
           return;
         }
         if(!expense_category){

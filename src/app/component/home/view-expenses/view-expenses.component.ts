@@ -73,20 +73,22 @@ export class ViewExpensesComponent implements OnInit {
       this.cards = [
         {
           icon: 'today',
-          title: 'First Expense Date',
+          title: 'Fecha del primer gasto',
           content: (len>0)?(res.data[0].expense_date):'-',
         },
         {
           icon: 'today',
-          title: 'Latest Expense Date',
+          title: 'Fecha del último gasto',
           content: (len>0)?(res.data[res.data.length - 1].expense_date):'-',
         },
         {
           icon: 'numbers',
-          title: 'Number of Expenses',
+          title: 'Número de gastos',
           content: len,
         },
-        { icon: 'monetization_on', title: 'Total Amount', content: '₹'+this.count },
+        { icon: 'monetization_on', 
+          title: 'Cantidad total', 
+          content: this.count },
       ];
       this.allexpense=len;
       this.businessData.expensesLogged=this.allexpense;
@@ -97,7 +99,7 @@ export class ViewExpensesComponent implements OnInit {
         this.isLoading=false;
       }, 4000);
     },(error)=>{
-      this._snackBar.open('Session Expired!!','',{duration:2000});
+      this._snackBar.open('¡¡Sesión expirada!!','',{duration:2000});
       this.authServ.onLogout();
     });
   }
@@ -129,7 +131,7 @@ export class ViewExpensesComponent implements OnInit {
           this.count+=this.hashMap[key];
         }
       }
-      this.cards[3].content='₹'+this.count;
+      this.cards[3].content='Bs '+this.count;
       
     })
   }

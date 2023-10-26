@@ -40,7 +40,4 @@ export class HomeComponent implements OnInit {
   onGithub(){
     this.businessData.onGithub();
   }
-  onLinkedin(){
-    this.businessData.onLinkedin();
-  }
 }

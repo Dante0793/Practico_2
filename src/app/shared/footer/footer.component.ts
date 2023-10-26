@@ -11,7 +11,4 @@ export class FooterComponent {
   onGithub(){
     this.businessData.onGithub();
   }
-  onLinkedin(){
-    this.businessData.onLinkedin();
-  }
 }
